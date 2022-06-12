@@ -95,7 +95,7 @@ def rainbow_matching_fixed(n, k, d, L):
         correct &= max([G.degree(j) for j in range(n)]) <= d
         correct &= len(F[i]) > (k - 1) * d
 
-    # print assignment
+    # print solution
     print("Found", correct, "solution")
     for i in range(k):
         print("F", i, "= (", L[i], "U", R[i], ",", F[i], ")")
@@ -103,7 +103,7 @@ def rainbow_matching_fixed(n, k, d, L):
     print("")
 
 ######################################
-# MODEL CREATING BIPARTATE GRAPHS
+# MODEL CREATING BIPARTITE GRAPHS
 ######################################
 
 def rainbow_matching_free(n, k, d):
@@ -208,7 +208,7 @@ def rainbow_matching_free(n, k, d):
         correct &= max([G.degree(j) for j in range(n)]) <= d
         correct &= len(F[i]) > (k - 1) * d
 
-    # print assignment
+    # print solution
     print("Found", correct, "solution")
     for i in range(k):
         print("F", i, "= (", L[i], "U", R[i], ",", F[i], ")")
@@ -229,7 +229,7 @@ def main():
 
     # read input
     if len(sys.argv) < 2:
-        print("Using n=6, k=3, d=2 and running both models")
+        print("Defaulting to mode", use_mode, "with n =", n, "k =", k, "d =", d)
 
     elif len(sys.argv) >= 2:
         if sys.argv[1] == "fixed":
